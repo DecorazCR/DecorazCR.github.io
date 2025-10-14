@@ -1,0 +1,1159 @@
+/* Estilos generales del cuerpo de la página */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fuente tipográfica más legible */
+    background: white; /* Fondo blanco limpio */
+    padding-top: 70px; /* Espacio superior para la barra de navegación fija */
+    line-height: 1.6; /* Mejor legibilidad */
+    letter-spacing: 0.3px; /* Espaciado de letras sutil */
+    color: #000000; /* Color de texto más elegante */
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif; /* Fuente elegante y legible para títulos */
+}
+/* Estilos para la sección Hero */
+.hero {
+    background: linear-gradient(135deg, #722f37 0%, #a0454a 50%, #d4a574 100%); /* Gradiente moderno con toques dorados */
+    color: white; /* Texto blanco */
+    padding: 80px 0 60px; /* Espaciado vertical reducido */
+    position: relative; /* Posicionamiento relativo para elementos absolutos */
+    overflow: hidden; /* Ocultar contenido que se desborde */
+    text-align: center; /* Centrar texto */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.1), 0 0 50px rgba(255, 215, 0, 0.2); /* Sombra interna y externa dorada para elegancia */
+    min-height: 70vh; /* Altura mínima reducida */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 2; /* Asegurar que el contenido esté por encima de elementos flotantes */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Forma moderna con clip-path para un diseño más dinámico */
+    animation: gradientShift 20s ease-in-out infinite; /* Animación suave del gradiente */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background: linear-gradient(135deg, #722f37 0%, #a0454a 50%, #d4a574 100%);
+    z-index: -1;
+}
+
+/* Textura sutil para profundidad */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><pattern id="grain" width="256" height="256" patternUnits="userSpaceOnUse"><circle cx="128" cy="128" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Contenedor del texto del hero */
+.hero .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Elementos decorativos flotantes */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* No interferir con clics */
+    z-index: 1;
+}
+
+.floating-snowflake, .floating-star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+    animation: float 8s ease-in-out infinite;
+}
+
+.floating-snowflake { top: 20%; left: 10%; animation-delay: 0s; }
+.floating-star { top: 30%; right: 15%; animation-delay: 4s; }
+
+.floating-snowflake2 {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.5rem;
+    animation: float 10s ease-in-out infinite;
+    top: 50%; left: 70%; animation-delay: 2s;
+}
+
+.floating-star2 {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.8rem;
+    animation: float 12s ease-in-out infinite;
+    top: 60%; right: 30%; animation-delay: 6s;
+}
+
+.floating-snowflake3 {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.2rem;
+    animation: float 14s ease-in-out infinite;
+    top: 40%; left: 5%; animation-delay: 8s;
+}
+
+.floating-star3 {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.6rem;
+    animation: float 16s ease-in-out infinite;
+    top: 70%; right: 10%; animation-delay: 10s;
+}
+
+.floating-tree {
+    position: absolute;
+    color: rgba(114, 47, 55, 0.3);
+    font-size: 2.5rem;
+    animation: float 12s ease-in-out infinite;
+    top: 45%; left: 25%; animation-delay: 1s;
+}
+
+.floating-gift {
+    position: absolute;
+    color: rgba(139, 38, 53, 0.25);
+    font-size: 2rem;
+    animation: float 15s ease-in-out infinite;
+    top: 55%; right: 25%; animation-delay: 3s;
+}
+
+.floating-candy {
+    position: absolute;
+    color: rgba(160, 74, 74, 0.3);
+    font-size: 1.8rem;
+    animation: float 18s ease-in-out infinite;
+    top: 35%; left: 60%; animation-delay: 5s;
+}
+
+.floating-ornament {
+    position: absolute;
+    color: rgba(114, 47, 55, 0.35);
+    font-size: 1.5rem;
+    animation: float 20s ease-in-out infinite;
+    top: 65%; right: 5%; animation-delay: 7s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Logo del hero */
+.hero-logo {
+    margin-bottom: 1rem;
+}
+
+.hero-logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2), 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.hero-logo-img:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Título del hero */
+.hero-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+}
+
+.text-gold {
+    color: #0f5320;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Subtítulo del hero */
+.hero-subtitle {
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle i {
+    color: #ffd700;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Descripción del hero */
+.hero-description {
+    margin-bottom: 2rem;
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.feature-badge {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.feature-badge i {
+    color: #ffd700;
+}
+
+/* Botones del hero */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.hero-btn-primary {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+.hero-btn-primary:hover {
+    background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.hero-btn-secondary {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-mouse {
+    width: 24px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    margin: 0 auto 0.5rem;
+    position: relative;
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { opacity: 0; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
+    50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+    100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
+}
+
+.scroll-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+/* Estilos para el texto del hero */
+.hero h1 {
+    font-weight: 700; /* Peso de fuente más fuerte */
+    font-size: 3.5rem; /* Tamaño de fuente más grande */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.1); /* Sombra de texto múltiple */
+    letter-spacing: 1px; /* Espaciado de letras */
+    margin-bottom: 1rem; /* Margen inferior */
+}
+.hero .lead {
+    font-weight: 300; /* Peso de fuente más ligero */
+    font-size: 1.4rem; /* Tamaño de fuente refinado */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra sutil */
+    opacity: 0.95; /* Opacidad sutil */
+    margin-bottom: 2rem; /* Margen inferior aumentado */
+}
+.hero p {
+    font-weight: 400; /* Peso de fuente normal */
+    font-size: 1.1rem; /* Tamaño de fuente elegante */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra sutil */
+    max-width: 600px; /* Ancho máximo */
+    margin: 0 auto 2.5rem; /* Centrado y margen */
+    line-height: 1.7; /* Altura de línea mejorada */
+}
+/* Efecto de nieve animada */
+.hero::before {
+    content: ''; /* Contenido vacío para el pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text fill="rgba(255,255,255,0.08)" font-size="20" y="50%">❄</text></svg>') repeat; /* Copos de nieve SVG */
+    animation: snow 15s linear infinite; /* Animación infinita de nieve */
+}
+/* Animación de caída de nieve */
+@keyframes snow {
+    0% { transform: translateY(-100px); } /* Inicio arriba */
+    100% { transform: translateY(100vh); } /* Fin abajo */
+}
+
+/* Animación del gradiente */
+@keyframes gradientShift {
+    0% { background: linear-gradient(135deg, #722f37 0%, #8b2635 50%, #a0454a 100%); }
+    50% { background: linear-gradient(135deg, #8b2635 0%, #a0454a 50%, #722f37 100%); }
+    100% { background: linear-gradient(135deg, #722f37 0%, #8b2635 50%, #a0454a 100%); }
+}
+/* Estilos para las imágenes de la galería */
+.gallery img {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elegante con curva personalizada */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.05); /* Sombra múltiple sofisticada */
+    border: 1px solid rgba(255,255,255,0.2); /* Borde sutil */
+}
+/* Efecto hover para las imágenes de la galería */
+.gallery img:hover {
+    transform: scale(1.08) rotate(1deg) translateY(-5px); /* Transformación más elegante */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1), 0 0 30px rgba(220, 53, 69, 0.1); /* Sombra múltiple con toque de color */
+    border-color: rgba(255,255,255,0.4); /* Borde más visible en hover */
+}
+/* Estilos para el botón de WhatsApp */
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); /* Gradiente sofisticado */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    padding: 15px 30px; /* Espaciado interno aumentado */
+    border-radius: 50px; /* Bordes completamente redondeados */
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 600; /* Peso de fuente seminegrita */
+    font-size: 1.1rem; /* Tamaño de fuente elegante */
+    letter-spacing: 0.5px; /* Espaciado de letras */
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3), 0 4px 10px rgba(37, 211, 102, 0.2); /* Sombra múltiple */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elegante */
+    position: relative; /* Para efectos de pseudo-elementos */
+    overflow: hidden; /* Ocultar contenido que se desborde */
+}
+/* Efecto hover para el botón de WhatsApp */
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128c7e 0%, #25d366 100%); /* Gradiente invertido */
+    transform: translateY(-3px) scale(1.05); /* Elevación y escala */
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4), 0 8px 20px rgba(37, 211, 102, 0.3); /* Sombra más dramática */
+    border-color: rgba(255, 255, 255, 0.4); /* Borde más visible */
+    color: white; /* Mantener texto blanco */
+}
+/* Efecto de brillo para el botón */
+.whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+.whatsapp-btn:hover::before {
+    left: 100%;
+}
+/* Estilos para la barra de navegación */
+.navbar {
+    background: linear-gradient(135deg, #722f37 0%, #8b2635 50%, #a0454a 100%); /* Gradiente sofisticado vino tinto */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 10px rgba(0,0,0,0.1); /* Sombra múltiple elegante */
+    backdrop-filter: blur(10px); /* Efecto glassmorphism */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil inferior */
+    transition: top 0.3s ease; /* Transición para ocultar/mostrar */
+}
+
+
+/* Estilos para los títulos de sección */
+.section-title {
+    position: relative; /* Posicionamiento relativo para pseudo-elementos */
+    display: inline-block; /* Mostrar como elemento en línea */
+    font-family: 'Berkshire Swash', cursive; /* Fuente Berkshire Swash */
+    font-weight: 400; /* Peso normal para cursive */
+    font-size: 2.2rem; /* Tamaño de fuente más grande */
+    letter-spacing: 0.5px; /* Espaciado de letras sutil */
+    color: #033319; /* Color de texto elegante */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra de texto sutil */
+}
+
+/* Estilos para los párrafos en la sección Sobre Nosotros */
+#about p {
+    font-family: 'DM Serif Text', serif; /* Fuente DM Serif Text para párrafos */
+    font-size: 1.4rem; /* Tamaño de fuente más grande */
+}
+
+/* Estilos para los párrafos en la sección Manejamos Diseños en Tendencia */
+#trends p {
+    font-family: 'DM Serif Text', serif; /* Fuente DM Serif Text para párrafos */
+    font-size: 1.4rem; /* Tamaño de fuente más grande */
+}
+/* Línea decorativa bajo los títulos de sección */
+.section-title::after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: -15px; /* Abajo del texto */
+    left: 50%; /* Centro horizontal */
+    transform: translateX(-50%); /* Centrar exactamente */
+    width: 80px; /* Ancho aumentado */
+    height: 4px; /* Alto aumentado */
+    background: linear-gradient(135deg, #722f37 0%, #8b2635 50%, #a0454a 100%); /* Gradiente sofisticado vino tinto */
+    border-radius: 2px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(114, 47, 55, 0.3); /* Sombra sutil */
+}
+
+/* Sombras adicionales para secciones */
+#about, #gallery, #contact {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 40px 0;
+}
+/* Estilos para las tarjetas con efecto glassmorphism */
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil translúcido */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.05); /* Sombra múltiple sofisticada */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-translúcido */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elegante */
+}
+/* Efecto hover para las tarjetas */
+.card:hover {
+    transform: translateY(-8px) scale(1.02); /* Elevación y escala sutil */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1); /* Sombra más dramática */
+    border-color: rgba(255, 255, 255, 0.4); /* Borde más visible */
+    background: rgba(255, 255, 255, 0.95); /* Fondo más opaco en hover */
+}
+
+/* Estilos para la sección de ubicación */
+.location-bg {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.location-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(0,123,255,0.05)"/></svg>') repeat;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.location-card {
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+}
+
+.location-card:hover {
+    border-color: rgba(0, 123, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0,123,255,0.15), 0 10px 20px rgba(0,123,255,0.1);
+}
+
+.map-container iframe {
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.05);
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.map-container iframe:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.location-btn {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(0,123,255,0.3);
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-btn:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,123,255,0.4);
+    color: white;
+}
+
+.location-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.location-btn:hover::before {
+    left: 100%;
+}
+/* Fondo para la sección de contacto */
+.contact-bg {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%); /* Gradiente verde sofisticado */
+    position: relative; /* Para efectos de pseudo-elementos */
+    overflow: hidden; /* Ocultar contenido que se desborde */
+}
+/* Efecto decorativo para la sección de contacto */
+.contact-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat; /* Patrón de puntos sutil */
+    opacity: 0.3;
+}
+/* Fondo para el pie de página */
+.footer-bg {
+    background: linear-gradient(135deg, #722f37 0%, #8b2635 50%, #a0454a 100%); /* Gradiente sofisticado vino tinto */
+    color: white; /* Texto blanco */
+    position: relative; /* Para efectos de pseudo-elementos */
+    box-shadow: inset 0 10px 30px rgba(0,0,0,0.2); /* Sombra interna */
+    overflow: hidden; /* Ocultar elementos flotantes que se desborden */
+    animation: gradientShift 20s ease-in-out infinite; /* Animación suave del gradiente */
+}
+
+/* Efectos hover para enlaces en el footer */
+.footer-bg a {
+    transition: all 0.3s ease;
+}
+
+.footer-bg a:hover {
+    color: #ffd700 !important; /* Color dorado */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Sombra de texto dorada */
+}
+
+/* Efectos hover para iconos de redes sociales en el footer */
+.footer-bg .fab:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Elementos decorativos flotantes en el footer */
+.floating-elements-footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* No interferir con clics */
+    z-index: 1;
+}
+
+.floating-snowflake-footer, .floating-tree-footer, .floating-gift-footer, .floating-candy-footer, .floating-ornament-footer {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 2rem;
+    animation: float 10s ease-in-out infinite;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.floating-snowflake-footer:hover, .floating-tree-footer:hover, .floating-gift-footer:hover, .floating-candy-footer:hover, .floating-ornament-footer:hover {
+    transform: scale(1.3) rotate(15deg);
+    opacity: 1;
+    animation-play-state: paused;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8));
+    cursor: default;
+}
+
+.floating-snowflake-footer { top: 20%; left: 10%; animation-delay: 0s; }
+.floating-tree-footer { top: 50%; right: 15%; animation-delay: 2s; color: rgba(255, 215, 0, 0.4); }
+.floating-gift-footer { top: 30%; left: 70%; animation-delay: 4s; }
+.floating-candy-footer { top: 70%; right: 20%; animation-delay: 6s; }
+.floating-ornament-footer { top: 10%; right: 50%; animation-delay: 8s; color: rgba(255, 215, 0, 0.4); }
+
+/* Animación de brillo suave para los elementos flotantes */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.4);
+        opacity: 0.8;
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 0.7);
+        opacity: 1;
+    }
+}
+
+.floating-snowflake-footer, .floating-tree-footer, .floating-gift-footer, .floating-candy-footer, .floating-ornament-footer {
+    animation: float 10s ease-in-out infinite, glow 3s ease-in-out infinite;
+}
+
+/* Estilos para el botón navideño "Volver al Inicio" */
+.btn-christmas {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #a02622 100%); /* Gradiente rojo navideño */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    padding: 15px 30px; /* Espaciado interno aumentado */
+    border-radius: 50px; /* Bordes completamente redondeados */
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 600; /* Peso de fuente seminegrita */
+    font-size: 1.1rem; /* Tamaño de fuente elegante */
+    letter-spacing: 0.5px; /* Espaciado de letras */
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4), 0 4px 10px rgba(220, 53, 69, 0.2); /* Sombra múltiple */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elegante */
+    position: relative; /* Para efectos de pseudo-elementos */
+    overflow: hidden; /* Ocultar contenido que se desborde */
+    display: inline-flex; /* Flexbox para alinear icono y texto */
+    align-items: center; /* Centrar verticalmente */
+    gap: 0.5rem; /* Espacio entre icono y texto */
+    animation: christmas-glow 2s ease-in-out infinite alternate; /* Animación de brillo navideño */
+}
+
+/* Efecto hover para el botón navideño */
+.btn-christmas:hover {
+    background: linear-gradient(135deg, #c82333 0%, #a02622 50%, #dc3545 100%); /* Gradiente invertido */
+    transform: translateY(-3px) scale(1.05); /* Elevación y escala */
+    box-shadow: 0 15px 35px rgba(220, 53, 69, 0.5), 0 8px 20px rgba(220, 53, 69, 0.3); /* Sombra más dramática */
+    border-color: rgba(255, 255, 255, 0.5); /* Borde más visible */
+    color: white; /* Mantener texto blanco */
+    animation-play-state: paused; /* Pausar animación en hover */
+}
+
+/* Efecto de brillo para el botón navideño */
+.btn-christmas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+/* Efecto de brillo en hover */
+.btn-christmas:hover::before {
+    left: 100%;
+}
+
+/* Elementos decorativos navideños para el botón */
+.btn-christmas::after {
+    content: '❄';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    animation: snow-fall 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* Animación de nieve cayendo */
+@keyframes snow-fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(20px) rotate(360deg); opacity: 0; }
+}
+
+/* Animación de brillo navideño */
+@keyframes christmas-glow {
+    0% {
+        box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4), 0 4px 10px rgba(220, 53, 69, 0.2), 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 8px 25px rgba(220, 53, 69, 0.5), 0 4px 10px rgba(220, 53, 69, 0.3), 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+}
+/* Comportamiento de desplazamiento suave */
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+/* Diseño responsivo para tablets y dispositivos móviles */
+/* Media query para pantallas de hasta 768px (tablets) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0 60px; /* Reducir espaciado vertical en tablets */
+        min-height: auto; /* Remover altura mínima en tablets */
+    }
+
+    .hero-logo-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Título más pequeño en tablets */
+    }
+
+    .hero-text {
+        font-size: 1.1rem; /* Texto más pequeño en tablets */
+    }
+
+    .hero-features {
+        gap: 1rem; /* Reducir espacio entre badges */
+    }
+
+    .feature-badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Botones en columna en tablets */
+        gap: 0.5rem;
+    }
+
+    .hero-btn-primary, .hero-btn-secondary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .floating-snowflake, .floating-star, .floating-snowflake2, .floating-star2, .floating-snowflake3, .floating-star3, .floating-tree, .floating-gift, .floating-candy, .floating-ornament {
+        font-size: 1.5rem; /* Iconos más pequeños */
+    }
+
+    .navbar-brand img {
+        height: 40px; /* Logo más pequeño en tablets */
+    }
+    .section-title::after {
+        width: 40px; /* Línea decorativa más corta */
+    }
+    .card-body h5 {
+        font-size: 1.1rem; /* Tamaño de fuente ajustado */
+    }
+    .card-body p {
+        font-size: 0.9rem; /* Tamaño de fuente ajustado */
+    }
+    .whatsapp-btn {
+        padding: 10px 20px; /* Espaciado interno reducido */
+        font-size: 0.9rem; /* Fuente más pequeña */
+    }
+}
+
+/* Media query para pantallas de hasta 576px (móviles) */
+@media (max-width: 576px) {
+    .hero {
+        padding: 60px 0 40px; /* Espaciado aún más reducido en móviles */
+    }
+
+    .hero-logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-title {
+        font-size: 2rem; /* Título más pequeño en móviles */
+    }
+
+    .hero-subtitle i {
+        font-size: 1rem;
+    }
+
+    .hero-text {
+        font-size: 1rem; /* Texto más pequeño en móviles */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-features {
+        flex-direction: column; /* Badges en columna en móviles */
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .feature-badge {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .hero-buttons {
+        gap: 0.5rem;
+    }
+
+    .hero-btn-primary, .hero-btn-secondary {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+
+    .floating-snowflake, .floating-star, .floating-snowflake2, .floating-star2, .floating-snowflake3, .floating-star3, .floating-tree, .floating-gift, .floating-candy, .floating-ornament {
+        font-size: 1.2rem; /* Iconos aún más pequeños */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Título más pequeño en móviles */
+    }
+    .hero .lead {
+        font-size: 1rem; /* Subtítulo ajustado */
+    }
+    .hero p {
+        font-size: 0.9rem; /* Texto descriptivo más pequeño */
+    }
+    .section-title {
+        font-size: 1.5rem; /* Títulos de sección más pequeños */
+    }
+}
+
+/* Estilos mejorados para la sección de Contacto y Redes Sociales */
+#contact-social {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+#contact-social::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(114,47,55,0.05)"/></svg>') repeat;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#contact-social .container {
+    position: relative;
+    z-index: 2;
+}
+
+#contact-social .card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1), 0 6px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-social .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 12px 25px rgba(0,0,0,0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+#contact-social .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    flex-grow: 1;
+}
+
+#contact-social .card-body i {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+#contact-social .card:hover .card-body i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.2));
+}
+
+#contact-social .card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#contact-social .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#contact-social .btn {
+    background: linear-gradient(135deg, #722f37 0%, #8b2635 50%, #a0454a 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(114,47,55,0.3);
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+#contact-social .btn:hover {
+    background: linear-gradient(135deg, #8b2635 0%, #a0454a 50%, #722f37 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(114,47,55,0.4);
+    color: white;
+}
+
+#contact-social .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+#contact-social .btn:hover::before {
+    left: 100%;
+}
+
+/* Estilos específicos para botones de redes sociales */
+#contact-social .btn-primary {
+    background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
+    box-shadow: 0 8px 25px rgba(24,119,242,0.3);
+}
+
+#contact-social .btn-primary:hover {
+    background: linear-gradient(135deg, #42a5f5 0%, #1877f2 100%);
+    box-shadow: 0 15px 35px rgba(24,119,242,0.4);
+}
+
+#contact-social .btn-danger {
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    box-shadow: 0 8px 25px rgba(233,30,99,0.3);
+}
+
+#contact-social .btn-danger:hover {
+    background: linear-gradient(135deg, #f06292 0%, #e91e63 100%);
+    box-shadow: 0 15px 35px rgba(233,30,99,0.4);
+}
+
+#contact-social .whatsapp-btn {
+    background: linear-gradient(135deg, #25d366 0%, #4caf50 100%);
+    box-shadow: 0 8px 25px rgba(37,211,102,0.3);
+}
+
+#contact-social .whatsapp-btn:hover {
+    background: linear-gradient(135deg, #4caf50 0%, #25d366 100%);
+    box-shadow: 0 15px 35px rgba(37,211,102,0.4);
+}
+
+/* Responsividad para la sección de contacto */
+@media (max-width: 768px) {
+    #contact-social {
+        padding: 60px 0;
+    }
+
+    #contact-social .card-body {
+        padding: 1.5rem 1rem;
+    }
+
+    #contact-social .card-body i {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #contact-social .card-title {
+        font-size: 1.1rem;
+    }
+
+    #contact-social .card-text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    #contact-social .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #contact-social {
+        padding: 40px 0;
+    }
+
+    #contact-social .row {
+        --bs-gutter-x: 1rem;
+    }
+
+    #contact-social .col-md-3 {
+        margin-bottom: 2rem;
+    }
+
+    #contact-social .card-body {
+        padding: 1.2rem 0.8rem;
+    }
+
+    #contact-social .card-body i {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    #contact-social .card-title {
+        font-size: 1rem;
+    }
+
+    #contact-social .card-text {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #contact-social .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Estilos para uniformizar el tamaño de los carruseles en la galería */
+#gallery .carousel {
+    height: 400px;
+}
+
+#gallery .carousel-inner,
+#gallery .carousel-item {
+    height: 100%;
+}
+
+#gallery .carousel img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sombras para todas las imágenes */
+img {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Animación flotante para la imagen de Sobre Nosotros */
+@keyframes float-about {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Efectos para la imagen de Sobre Nosotros */
+#about img {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: float-about 4s ease-in-out infinite;
+}
+
+#about img:hover {
+    transform: scale(1.08) rotate(1deg) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1), 0 0 30px rgba(220, 53, 69, 0.1);
+    border-color: rgba(255,255,255,0.4);
+    animation-play-state: paused; /* Pausar animación en hover */
+}
