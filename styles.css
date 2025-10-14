@@ -293,59 +293,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-/* Indicador de scroll */
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-}
 
-.scroll-mouse {
-    width: 24px;
-    height: 36px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 12px;
-    margin: 0 auto 0.5rem;
-    position: relative;
-}
-
-.scroll-wheel {
-    width: 4px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll 2s infinite;
-}
-
-@keyframes scroll {
-    0% { opacity: 0; transform: translateX(-50%) translateY(0); }
-    50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
-    50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
-    100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
-}
-
-.scroll-text {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    margin: 0;
-}
 /* Estilos para el texto del hero */
 .hero h1 {
     font-weight: 700; /* Peso de fuente más fuerte */
@@ -1157,4 +1105,5 @@ img {
     border-color: rgba(255,255,255,0.4);
     animation-play-state: paused; /* Pausar animación en hover */
 }
+
 
