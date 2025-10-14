@@ -156,8 +156,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-logo-img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 25px rgba(0,0,0,0.2), 0 0 20px rgba(255, 215, 0, 0.3);
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Título del hero */
 .hero-title {
     font-family: 'Abril Fatface', serif;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.2);
     letter-spacing: 2px;
@@ -1157,3 +1157,4 @@ img {
     border-color: rgba(255,255,255,0.4);
     animation-play-state: paused; /* Pausar animación en hover */
 }
+
